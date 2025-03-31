@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="store-page">
+        <!-- Buscador y filtros -->
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar productos...">
+            <span class="search-icon">🔍</span>
+        </div>
+        <div class="filters">
+            <button class="filter-button" data-category="all">Todos</button>
+            <button class="filter-button" data-category="granos">Granos</button>
+            <button class="filter-button" data-category="lacteos">Lácteos</button>
+            <button class="filter-button" data-category="acompañamientos">Acompañamientos</button>
+            <button class="filter-button" data-category="condimentos">Condimentos</button>
+        </div>
+
+        <!-- Productos -->
+        <div class="products" id="product-list"></div>
+
+        <!-- Carrito -->
+        <div class="cart">
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: <span id="cart-total">0</span> COP</p>
+            <button id="pay-button" disabled onclick="showPaymentPage()">Pagar</button>
+        </div>
+    </div>
+
+    <!-- Página de pago -->
+    <div id="payment-page" class="hidden">
+        <h1>Proceso de Pago</h1>
+
+        <!-- Pago con cámara -->
+        <div class="payment-camera">
+            <h2>Pago con Cámara</h2>
+            <video id="camera-stream" autoplay></video>
+            <p id="camera-error" class="hidden">No se detectó una cámara. Usa el pago por QR.</p>
+        </div>
+
+        <!-- Pago por QR -->
+        <div class="qr-payment hidden">
+            <h3>Paga escaneando este código QR:</h3>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Commons_QR_code.png" alt="Código QR">
+        </div>
+
+        <button onclick="showStorePage()">Volver</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="pago.js"></script>
+</body>
+</html>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
